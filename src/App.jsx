@@ -1,7 +1,6 @@
-// src/App.jsx
 import React, { useState } from "react";
 import StepEditor from "./components/StepEditor";
-import HomeDemo from "./components/HomeDemo"; // ✅ Import it
+import HomeDemo from "./components/HomeDemo";
 import loginImg from "./assets/login.png";
 import dashboardImg from "./assets/dashboard.png";
 import repoImg from "./assets/repo.png";
@@ -30,7 +29,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      {/* Switch Buttons */}
       <div className="flex items-center justify-center gap-4 mb-4">
         <button
           className={`px-4 py-2 rounded ${
@@ -50,7 +48,6 @@ function App() {
         </button>
       </div>
 
-      {/* Conditional View */}
       {isEditor ? (
         <StepEditor />
       ) : (

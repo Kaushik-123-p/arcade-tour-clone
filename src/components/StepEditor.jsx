@@ -1,4 +1,3 @@
-// src/components/StepEditor.jsx
 import React, { useState } from "react";
 import StepCard from "./StepCard";
 
@@ -8,7 +7,6 @@ function StepEditor() {
   const [newImage, setNewImage] = useState("");
   const [newDescription, setNewDescription] = useState("");
 
-  // 🔁 Handle Add New Step
   const addNewStep = () => {
     if (newTitle && newImage && newDescription) {
       const newStep = {
@@ -18,7 +16,6 @@ function StepEditor() {
       };
       setSteps([...steps, newStep]);
 
-      // Reset form inputs
       setNewTitle("");
       setNewImage("");
       setNewDescription("");
@@ -31,7 +28,6 @@ function StepEditor() {
     <div className="space-y-6 flex flex-col items-center justify-center p-4">
       <h2 className="text-2xl font-bold text-center">Editor Page</h2>
 
-      {/* Title */}
       <div className="w-full max-w-md">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Step Title
@@ -45,7 +41,6 @@ function StepEditor() {
         />
       </div>
 
-      {/* Image URL */}
       <div className="w-full max-w-md">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Image URL
@@ -59,7 +54,6 @@ function StepEditor() {
         />
       </div>
 
-      {/* Description */}
       <div className="w-full max-w-md">
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Description
@@ -72,7 +66,6 @@ function StepEditor() {
         />
       </div>
 
-      {/* Add Step Button */}
       <button
         onClick={addNewStep}
         className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"
@@ -80,7 +73,6 @@ function StepEditor() {
         Add Step
       </button>
 
-      {/* Preview Steps */}
       {steps.length > 0 && (
         <div className="mt-10 space-y-4 w-full max-w-xl">
           <h3 className="text-xl font-bold text-center">Live Preview</h3>

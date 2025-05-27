@@ -1,4 +1,3 @@
-// src/components/HomeDemo.jsx
 import React from "react";
 
 function HomeDemo({ demoSteps, showSteps, setShowSteps }) {
