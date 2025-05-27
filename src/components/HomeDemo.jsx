@@ -1,6 +1,8 @@
 import React from "react";
 
-function HomeDemo({ demoSteps, showSteps, setShowSteps }) {
+function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
+  const combinedSteps = [...demoSteps, ...userSteps];
+
   return (
     <div className="text-center space-y-6">
       <h1 className="text-3xl lg:text-4xl font-bold text-gray-800">
@@ -18,7 +20,7 @@ function HomeDemo({ demoSteps, showSteps, setShowSteps }) {
 
       {showSteps && (
         <div className="mt-10 max-h-[80vh] overflow-y-auto space-y-8 p-2 flex flex-col items-center">
-          {demoSteps.map((step, index) => (
+          {combinedSteps.map((step, index) => (
             <div
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl"

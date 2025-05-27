@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import StepCard from "./StepCard";
 
-function StepEditor() {
-  const [steps, setSteps] = useState([]);
+function StepEditor({ steps, setSteps }) {
   const [newTitle, setNewTitle] = useState("");
   const [newImage, setNewImage] = useState("");
   const [newDescription, setNewDescription] = useState("");

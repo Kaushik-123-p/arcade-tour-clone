@@ -8,6 +8,7 @@ import repoImg from "./assets/repo.png";
 function App() {
   const [showSteps, setShowSteps] = useState(false);
   const [isEditor, setIsEditor] = useState(false);
+  const [steps, setSteps] = useState([]);
 
   const demoSteps = [
     {
@@ -49,10 +50,11 @@ function App() {
       </div>
 
       {isEditor ? (
-        <StepEditor />
+        <StepEditor steps={steps} setSteps={setSteps} />
       ) : (
         <HomeDemo
           demoSteps={demoSteps}
+          userSteps={steps}
           showSteps={showSteps}
           setShowSteps={setShowSteps}
         />
