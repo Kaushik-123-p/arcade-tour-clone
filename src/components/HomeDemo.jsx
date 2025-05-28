@@ -32,7 +32,7 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
           {combinedSteps.map((step, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl dark:bg-gray-200 dark:text-gray-700"
+              className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl dark:bg-gray-200 dark:text-gray-700 ring-2 ring-indigo-300 hover:ring-indigo-500 transition duration-300"
               initial={{ opacity: 0, y: 50 }}
               // animate={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
 
           {showModal && selectedStep && (
             <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[90%] max-w-md relative">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[90%] max-w-md relative ring-2 ring-indigo-300 hover:ring-indigo-500 transition duration-300">
                 <button
                   className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-lg"
                   onClick={() => setShowModal(false)}
