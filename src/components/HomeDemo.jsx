@@ -14,7 +14,7 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
       </p>
       <motion.button
         className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
-        onClick={() => setShowSteps(true)}
+        onClick={() => setShowSteps(!showSteps)}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.05 }}
