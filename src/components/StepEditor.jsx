@@ -28,7 +28,7 @@ function StepEditor({ steps, setSteps }) {
       <h2 className="text-2xl font-bold text-center">Editor Page</h2>
 
       <div className="w-full max-w-md">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1 dark:text-white">
           Step Title
         </label>
         <input
@@ -41,7 +41,7 @@ function StepEditor({ steps, setSteps }) {
       </div>
 
       <div className="w-full max-w-md">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1 dark:text-white">
           Image URL
         </label>
         <input
@@ -54,7 +54,7 @@ function StepEditor({ steps, setSteps }) {
       </div>
 
       <div className="w-full max-w-md">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1 dark:text-white">
           Description
         </label>
         <textarea

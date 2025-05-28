@@ -7,6 +7,7 @@ function StepCard({ title, image, description }) {
       <img
         src={image}
         alt={title}
+        title={title}
         className="w-full h-48 object-contain mx-auto rounded mb-2"
       />
       <p className="text-gray-700">{description}</p>
