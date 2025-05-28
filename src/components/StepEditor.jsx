@@ -36,12 +36,12 @@ function StepEditor({ steps, setSteps }) {
           placeholder="Enter step title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border rounded text-black ring-1 ring-indigo-300 hover:ring-indigo-500 transition duration-300"
         />
       </div>
 
       <div className="w-full max-w-md">
-        <label className="block text-sm font-medium text-gray-700 mb-1 dark:text-white">
+        <label className="block text-sm font-medium text-gray-700 mb-1 dark:text-white ">
           Image URL
         </label>
         <input
@@ -49,7 +49,7 @@ function StepEditor({ steps, setSteps }) {
           placeholder="Paste image URL"
           value={newImage}
           onChange={(e) => setNewImage(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          className="w-full px-4 py-2 border rounded text-black ring-1 ring-indigo-300 hover:ring-indigo-500 transition duration-300"
         />
       </div>
 
@@ -61,7 +61,7 @@ function StepEditor({ steps, setSteps }) {
           placeholder="Write a short description"
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
-          className="w-full px-4 py-2 border rounded h-24"
+          className="w-full px-4 py-2 border rounded h-24 text-black ring-1 ring-indigo-300 hover:ring-indigo-500 transition duration-300"
         />
       </div>
 

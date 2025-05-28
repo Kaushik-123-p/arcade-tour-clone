@@ -2,13 +2,13 @@ import React from "react";
 
 function StepCard({ title, image, description }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl text-center">
+    <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl text-center ring-2 ring-indigo-300 hover:ring-indigo-500 transition duration-300">
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <img
         src={image}
         alt={title}
         title={title}
-        className="w-full h-48 object-contain mx-auto rounded mb-2"
+        className="w-full h-48 object-contain mx-auto rounded mb-2 "
       />
       <p className="text-gray-700">{description}</p>
     </div>
