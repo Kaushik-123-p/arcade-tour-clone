@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
   const combinedSteps = [...demoSteps, ...userSteps];
@@ -11,28 +12,38 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
       <p className="text-gray-600 text-base lg:text-lg">
         A simple interactive demo like Arcade.software
       </p>
-      <button
+      <motion.button
         className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
         onClick={() => setShowSteps(true)}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         Start Demo
-      </button>
+      </motion.button>
 
       {showSteps && (
         <div className="mt-10 max-h-[80vh] overflow-y-auto space-y-8 p-2 flex flex-col items-center">
           {combinedSteps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl"
+              initial={{ opacity: 0, y: 50 }}
+              // animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5 }}
             >
               <h2 className="text-xl font-semibold mb-2">{step.title}</h2>
               <img
                 src={step.image}
                 alt={step.title}
+                title={step.title}
                 className="w-full h-48 object-contain mx-auto rounded mb-2"
               />
               <p className="text-gray-700">{step.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       )}
