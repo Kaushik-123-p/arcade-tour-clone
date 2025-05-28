@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaRegWindowClose } from "react-icons/fa";
 
 function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
   const combinedSteps = [...demoSteps, ...userSteps];
+  const [selectedStep, setSelectedStep] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="text-center space-y-6 ">
@@ -40,11 +44,39 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
                 src={step.image}
                 alt={step.title}
                 title={step.title}
-                className="w-full h-48 object-contain mx-auto rounded mb-2"
+                onClick={() => {
+                  setSelectedStep(step);
+                  setShowModal(true);
+                }}
+                className="w-full h-48 object-contain mx-auto rounded mb-2 cursor-pointer"
               />
               <p className="text-gray-700">{step.description}</p>
             </motion.div>
           ))}
+
+          {showModal && selectedStep && (
+            <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[90%] max-w-md relative">
+                <button
+                  className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-lg"
+                  onClick={() => setShowModal(false)}
+                >
+                  <FaRegWindowClose size={24} />
+                </button>
+                <h2 className="text-xl font-semibold mb-2">
+                  {selectedStep.title}
+                </h2>
+                <img
+                  src={selectedStep.image}
+                  alt={selectedStep.title}
+                  className="w-full h-48 object-contain mb-4"
+                />
+                <p className="text-gray-700 dark:text-gray-200">
+                  {selectedStep.description}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
