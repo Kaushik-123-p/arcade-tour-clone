@@ -2,7 +2,7 @@ import React from "react";
 
 function StepCard({ title, image, description }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl">
+    <div className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl text-center">
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <img
         src={image}

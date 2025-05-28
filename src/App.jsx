@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StepEditor from "./components/StepEditor";
 import HomeDemo from "./components/HomeDemo";
 import loginImg from "./assets/login.png";
@@ -8,7 +8,6 @@ import repoImg from "./assets/repo.png";
 function App() {
   const [showSteps, setShowSteps] = useState(false);
   const [isEditor, setIsEditor] = useState(false);
-  const [steps, setSteps] = useState([]);
 
   const demoSteps = [
     {
@@ -27,6 +26,15 @@ function App() {
       description: "Click here to create a new project in seconds.",
     },
   ];
+
+  const [steps, setSteps] = useState(() => {
+    const storedSteps = localStorage.getItem("userSteps");
+    return storedSteps ? JSON.parse(storedSteps) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("userSteps", JSON.stringify(steps));
+  }, [steps]);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
