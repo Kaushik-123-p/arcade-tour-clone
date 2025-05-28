@@ -19,10 +19,9 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
       <motion.button
         className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
         onClick={() => setShowSteps(!showSteps)}
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
       >
         Start Demo
       </motion.button>
@@ -33,8 +32,7 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
             <motion.div
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm w-full max-w-xl dark:bg-gray-200 dark:text-gray-700 ring-2 ring-indigo-300 hover:ring-indigo-500 transition duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              // animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.5 }}
@@ -69,6 +67,7 @@ function HomeDemo({ demoSteps, userSteps, showSteps, setShowSteps }) {
                 <img
                   src={selectedStep.image}
                   alt={selectedStep.title}
+                  title={selectedStep.title}
                   className="w-full h-48 object-contain mb-4"
                 />
                 <p className="text-gray-700 dark:text-gray-200">
